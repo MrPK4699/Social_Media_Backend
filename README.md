@@ -29,30 +29,30 @@ API's are built with graphQL
 
 🟢 Get All Posts:
 
-query {
-  getPosts {
-    id
-    body
-    createdAt
-    username
-    likeCount
-    commentCount
-  }
-}
+    query {
+    getPosts {
+        id
+        body
+        createdAt
+        username
+        likeCount
+        commentCount
+    }
+    }
 
 
 🟢 Get a Specific Post by ID:
 
-query {
-  getPost(postId: "post_id_here") {
-    id
-    body
-    createdAt
-    username
-    likeCount
-    commentCount
-  }
-}
+    query {
+    getPost(postId: "post_id_here") {
+        id
+        body
+        createdAt
+        username
+        likeCount
+        commentCount
+    }
+    }
 
 
 
@@ -88,76 +88,73 @@ query {
 
 🟠 Create a Post:
 
-mutation {
-  createPost(body: "This is a test post") {
-    id
-    body
-    createdAt
-    username
-  }
-}
+    mutation {
+        createPost(body: "This is a test post") {
+            id
+            body
+            createdAt
+            username
+        }
+    }
 
 
 
 🟠 Create a Comment on a Post:
 
-mutation {
-  createComment(postId: "post_id_here", body: "This is a test comment") {
-    id
-    comments {
-      id
-      body
-      createdAt
-      username
+    mutation {
+        createComment(postId: "post_id_here", body: "This is a test comment") {
+            id
+            comments {
+            id
+            body
+            createdAt
+            username
+            }
+        }
     }
-  }
-}
 
 
 
 
 🟠 Delete a Post (Requires authentication):
 
-mutation {
-  deletePost(postId: "post_id_here")
-}
+    mutation {
+        deletePost(postId: "post_id_here")
+    }
 
 
 🟠 Like a Post (Requires authentication):
 
-mutation {
-  likePost(postId: "post_id_here") {
-    id
-    likeCount
-  }
-}
+    mutation {
+        likePost(postId: "post_id_here") {
+            id
+            likeCount
+        }
+    }
 
 
 🟠 Update a Post (Requires authentication):
 
-mutation {
-  updatePost(postId: "post_id_here", body: "Updated post body") {
-    id
-    body
-    createdAt
-    username
-  }
-}
+    mutation {
+        updatePost(postId: "post_id_here", body: "Updated post body") {
+            id
+            body
+            createdAt
+            username
+        }
+    }
 
 
 🟠 Delete a Comment (Requires authentication):
 
-mutation {
-  deleteComment(postId: "post_id_here", commentId: "comment_id_here") {
-    id
-    comments {
-      id
-      body
-      createdAt
-      username
+    mutation {
+    deleteComment(postId: "post_id_here", commentId: "comment_id_here") {
+        id
+        comments {
+        id
+        body
+        createdAt
+        username
+        }
     }
-  }
-}
-
-
-Note: Only Admin can Create , Update , Delete books
+    }
