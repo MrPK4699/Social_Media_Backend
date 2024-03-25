@@ -1,7 +1,6 @@
-# Social_Media_Backend
-## Book-Library-Backend
+## Social_Media_Backend
 
-### Deployment : <a href="https:#">Link</a>
+### Deployment : <a href="https://socialmediabackend-production-0807.up.railway.app/">Link</a>
 
 ### Backend
 - Node.js
@@ -18,7 +17,7 @@
 1. Clone the repository.
 2. Navigate to the backend directory.
 3. Run `npm install` to install dependencies.
-4. Rename `sample.env.txt` to `.env` and fill in the necessary environment variables.
+4. Create `.env` and fill in the necessary environment variables.
 5. Run `npm run start` to start the development server.
 
 ## API Endpoints
@@ -30,28 +29,28 @@ API's are built with graphQL
 🟢 Get All Posts:
 
     query {
-    getPosts {
-        id
-        body
-        createdAt
-        username
-        likeCount
-        commentCount
-    }
+        getPosts {
+            id
+            body
+            createdAt
+            username
+            likeCount
+            commentCount
+        }
     }
 
 
 🟢 Get a Specific Post by ID:
 
     query {
-    getPost(postId: "post_id_here") {
-        id
-        body
-        createdAt
-        username
-        likeCount
-        commentCount
-    }
+        getPost(postId: "post_id_here") {
+            id
+            body
+            createdAt
+            username
+            likeCount
+            commentCount
+        }
     }
 
 
@@ -145,16 +144,18 @@ API's are built with graphQL
     }
 
 
-🟠 Delete a Comment (Requires authentication):
+🟠 Delete a Comment 
 
     mutation {
-    deleteComment(postId: "post_id_here", commentId: "comment_id_here") {
-        id
-        comments {
-        id
-        body
-        createdAt
-        username
+        deleteComment(postId: "post_id_here", commentId: "comment_id_here") {
+            id
+            comments {
+            id
+            body
+            createdAt
+            username
+            }
         }
     }
-    }
+
+Note: Requires authentication for all types of mutations 
